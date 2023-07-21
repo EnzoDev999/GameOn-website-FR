@@ -22,13 +22,15 @@ function checkFirstName() {
     !firstName.value.match(regex)
   ) {
     // Validation échouée
-    firstName.parentElement.setAttribute("data-error-visible", "true");
-    firstName.style.border = "2px solid #e54858";
+    firstName.parentElement.dataset.errorVisible = "true";
+    firstName.classList.remove("validationSuccess");
+    firstName.classList.add("error");
     return false;
   }
   // Validation réussie
-  firstName.parentElement.setAttribute("data-error-visible", "false");
-  firstName.style.border = "solid #279e7a 0.19rem";
+  firstName.parentElement.dataset.errorVisible = "false";
+  firstName.classList.remove("error");
+  firstName.classList.add("validationSuccess");
   return true;
 }
 
@@ -38,12 +40,14 @@ function checkLastName() {
     lastName.value.trim() === "" ||
     !lastName.value.match(regex)
   ) {
-    lastName.parentElement.setAttribute("data-error-visible", "true");
-    lastName.style.border = "2px solid #e54858";
+    lastName.parentElement.dataset.errorVisible = "true";
+    lastName.classList.remove("validationSuccess");
+    lastName.classList.add("error");
     return false;
   }
-  last.parentElement.setAttribute("data-error-visible", "false");
-  last.style.border = "solid #279e7a 0.19rem";
+  lastName.parentElement.dataset.errorVisible = "false";
+  lastName.classList.remove("error");
+  lastName.classList.add("validationSuccess");
   return true;
 }
 
@@ -52,24 +56,28 @@ function checkEmail() {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (email.value.trim().match(re)) {
-    email.parentElement.setAttribute("data-error-visible", "false");
-    email.style.border = "solid #279e7a 0.19rem";
+    email.parentElement.dataset.errorVisible = "false";
+    email.classList.remove("error");
+    email.classList.add("validationSuccess");
     return true;
   }
-  email.parentElement.setAttribute("data-error-visible", "true");
-  email.style.border = "2px solid #e54858";
+  email.parentElement.dataset.errorVisible = "true";
+  email.classList.remove("validationSuccess");
+  email.classList.add("error");
   return false;
 }
 
 // BIRTHDATE CHECK
 function checkBirthdate() {
   if (birthdate.value.trim().length !== 10) {
-    birthdate.parentElement.setAttribute("data-error-visible", "true");
-    birthdate.style.border = "2px solid #e54858";
+    birthdate.parentElement.dataset.errorVisible = "true";
+    birthdate.classList.remove("validationSuccess");
+    birthdate.classList.add("error");
     return false;
   }
-  birthdate.parentElement.setAttribute("data-error-visible", "false");
-  birthdate.style.border = "solid #279e7a 0.19rem";
+  birthdate.parentElement.dataset.errorVisible = "false";
+  birthdate.classList.remove("error");
+  birthdate.classList.add("validationSuccess");
   return true;
 }
 
@@ -80,35 +88,39 @@ function checkTournamentsQuantity() {
     isNaN(quantity.value.trim()) === true ||
     quantity.value.trim() < 0
   ) {
-    quantity.parentElement.setAttribute("data-error-visible", "true");
-    quantity.style.border = "2px solid #e54858";
-    return false;
+    quantity.parentElement.dataset.errorVisible = "true";
+    quantity.classList.remove("validationSuccess");
+    quantity.classList.add("error");
   }
-  quantity.parentElement.setAttribute("data-error-visible", "false");
-  quantity.style.border = "solid #279e7a 0.19rem";
+  quantity.parentElement.dataset.errorVisible = "false";
+  quantity.classList.remove("error");
+  quantity.classList.add("validationSuccess");
   return true;
 }
 
 // LOCATIONS CHECK
 function checkLocations() {
-  allLocations.setAttribute("data-error-visible", "true");
+  allLocations.dataset.errorVisible = "true";
   for (let i = 0; i < locations.length; i++) {
     if (locations[i].checked) {
-      allLocations.setAttribute("data-error-visible", "false");
+      allLocations.dataset.errorVisible = "false";
       return true;
     }
   }
+
   return false;
 }
 
 // TERMS OF USE CHECK CHECK
 function checkCheckBox() {
   if (checkbox1.checked === false) {
-    checkbox1.parentElement.setAttribute("data-error-visible", "true");
+    checkbox1.parentElement.dataset.errorVisible = "true";
     return false;
   }
-  checkbox1.parentElement.setAttribute("data-error-visible", "false");
-  return true;
+  {
+    checkbox1.parentElement.dataset.errorVisible = "false";
+    return true;
+  }
 }
 
 // FORM FIELDS EVENTS

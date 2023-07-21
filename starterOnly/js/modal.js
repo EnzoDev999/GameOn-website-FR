@@ -10,10 +10,12 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // LAUNCH MODAL FORM
 function launchModal() {
   modalbg.style.display = "block";
+  document.body.classList.add("modal-open"); // Ajoute la classe "modal-open" pour empêcher le défilement du contenu principal
 }
 // CLOSE MODAL FORM
 function closeModal() {
   modalbg.style.display = "none";
+  document.body.classList.remove("modal-open"); // Retire la classe "modal-open" pour réactiver le défilement du contenu principal
 }
 closeBtn[0].addEventListener("click", closeModal);
 

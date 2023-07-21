@@ -15,7 +15,7 @@
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
         <div class="logo">
-        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+          <img alt="logo" src="Logo.png" width="auto" height="auto" />
         </div>
       </div>
       <div class="main-navbar">
@@ -46,7 +46,7 @@
         </button>
       </div>
       <div class="hero-img">
-         <img src="./bg_img.jpg" alt="img" />
+        <img src="./bg_img.jpg" alt="img" />
       </div>
 
       <button class="btn-signup modal-btn">
@@ -60,7 +60,7 @@
         <span class="close"></span>
         <div class="modal-body">
           <form id="form" name="reserve" action="index.html" method="get">
-           
+
             <!-- FIRST NAME -->
 
             <div class="formData" data-error="Vous devez entrer 2 caractères ou plus." data-error-visible="false">
@@ -77,33 +77,30 @@
 
             <!-- EMAIL -->
 
-            <div class="formData" data-error="Vous devez entrer une adresse email valide."
-            data-error-visible="false">
+            <div class="formData" data-error="Vous devez entrer une adresse email valide." data-error-visible="false">
               <label for="email">E-mail</label><br>
               <input class="text-control" type="email" id="email" name="email" placeholder="exemple@email.com" /><br>
             </div>
 
             <!-- BIRTHDATE -->
 
-            <div class="formData" data-error="Vous devez entrer votre date de naissance."
-            data-error-visible="false">
+            <div class="formData" data-error="Vous devez entrer votre date de naissance." data-error-visible="false">
               <label for="birthdate">Date de naissance</label><br>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
             </div>
-            
+
             <!-- TOURNAMENTS QUANTITY -->
 
-            <div class="formData" data-error="Veuillez saisir une valeur numérique."
-            data-error-visible="false">
+            <div class="formData" data-error="Veuillez saisir une valeur numérique." data-error-visible="false">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" placeholder="0" min="0" max="99">
             </div>
-            
+
             <!-- LOCATIONS -->
 
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData" id="allLocations" data-error="Veuillez sélectionner une ville."
-            data-error-visible="false">
+              data-error-visible="false">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -130,11 +127,11 @@
                 Portland</label>
             </div>
 
-             <!-- TERMS OF USE -->
+            <!-- TERMS OF USE -->
 
-            <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
-              <label class="checkbox2-label" for="checkbox1" required>
+            <div class="formData" data-error="Veuillez accepter les conditions d'utilisation." data-error-visible="false">
+              <input class="checkbox-input" type="checkbox" id="checkbox1" required />
+              <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
