@@ -20,6 +20,7 @@ function closeSubmit() {
   email.style.border = "none";
   birthdate.style.border = "none";
   quantity.style.border = "none";
+  document.body.classList.remove("modal-open"); // retire le modal-open du body afin de pouvoir rescroll
 }
 
 // EVENT CLOSE MODAL SUBMIT

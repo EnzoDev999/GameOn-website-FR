@@ -6,12 +6,24 @@ const closeBtn = document.getElementsByClassName("close");
 
 // ------ DISPLAY MODAL ------ //
 // LAUNCH MODAL EVENTS
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalBtn.forEach((btn) =>
+  btn.addEventListener("click", function () {
+    launchModal();
+    scrollToTop();
+  })
+);
+
 // LAUNCH MODAL FORM
 function launchModal() {
   modalbg.style.display = "block";
   document.body.classList.add("modal-open"); // Ajoute la classe "modal-open" pour empêcher le défilement du contenu principal
 }
+
+// Fonction pour remonter la page tout en haut
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 // CLOSE MODAL FORM
 function closeModal() {
   modalbg.style.display = "none";

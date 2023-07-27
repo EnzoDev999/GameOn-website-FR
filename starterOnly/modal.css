@@ -13,9 +13,10 @@
 body {
   display: flex;
   flex-direction: column;
+  background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  width: 1440px;
+  max-width: 1300px;
   margin: 0px auto;
 }
 
@@ -25,14 +26,12 @@ p {
 }
 
 img {
-  padding-right: 27px;
-  padding-top: 5px;
-  padding-left: 70px;
+  padding-right: 1rem;
 }
 
 .topnav {
   overflow: hidden;
-  margin: 3.5% 30px;
+  margin: 3.5%;
 }
 
 .header-logo {
@@ -48,11 +47,12 @@ img {
   display: block;
   color: rgb(0, 0, 0);
   text-align: center;
-  padding: 12px;
+  padding: 8px 12px;
   margin: 5px;
   text-decoration: none;
   font-size: 20px;
   font-family: Roboto, sans-serif;
+  align-items: center;
 }
 
 .topnav a:hover {
@@ -71,59 +71,16 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {
-      display: none;
-  }
-
-  .topnav a.icon {
-      float: right;
-      display: block;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .topnav.responsive {
-      position: relative;
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .topnav.responsive .icon {
-      position: absolute;
-      right: 0px;
-      top: 0px;
-  }
-
-  .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-  }
-
-  .topnav.responsive .main-navbar {
-      width: 100%;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .topnav a {
-      display: none;
-  }
-
-  .topnav a.icon {
-      float: right;
-      display: block;
-  }
-}
-
 main {
   font-size: 130%;
   font-weight: bolder;
   color: black;
+  padding-top: 0.5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-  margin: 0px 100px;
 }
 
 .modal-btn {
@@ -189,7 +146,10 @@ main {
   position: relative;
   color: rgb(255, 255, 255);
   padding-top: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px 5px 10px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3);
 }
+
+
 
 .modal-body {
   padding: 15px 8%;
@@ -219,9 +179,17 @@ input {
   height: 48px;
 }
 
+.error{
+  border: 4px solid #e54858;
+}
+
+.validationSuccess{
+  border: 4px solid #279e7a;
+}
+
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 12px;
+  font-size: 0.4em;
   color: rgb(229, 72, 88);
   display: block;
   margin-top: 7px;
@@ -348,14 +316,6 @@ input {
   border: 0px;
 }
 
-.error{
-  border: 4px solid #e54858;
-}
-
-.validationSuccess{
-  border: 4px solid #279e7a;
-}
-
 .custom-select {
   position: relative;
   font-family: Arial;
@@ -403,7 +363,6 @@ input {
   height: 48px;
 }
 
-/* Style items (options): */
 .select-items {
   position: absolute;
   background-color: rgb(255, 255, 255);
@@ -426,28 +385,24 @@ input {
   font-size: 16px;
 }
 
-nav {
-  width: 1440px;
-}
-
 .hero-section {
+  min-height: 13vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px 2px;
   margin-bottom: 10px;
-  max-width: 1239px;
 }
 
 .hero-content {
   padding: 51px 67px;
-  grid-column: span 4 / auto;
+  grid-column: span 4;
   background: rgb(35, 35, 35);
   color: rgb(255, 255, 255);
   position: relative;
   text-align: left;
-  min-width: 424px;
+  min-width: 470px;
 }
 
 .hero-content::after {
@@ -472,39 +427,37 @@ nav {
 }
 
 .hero-text {
-  width: 140%;
+  width: 146%;
   font-weight: normal;
-  margin-top: 4rem;
+  margin-top: 57px;
   padding: 0px;
-  font-size: 31px;
 }
 
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 1.3rem;
   padding: 15px 23px;
   margin: 59px 0px 0px;
 }
 
 .hero-img {
-  grid-column: 5 / 13;
+  grid-column: span 8 / auto;
 }
 
 .hero-img img {
+  width: 100%;
+  height: 100%;
   display: block;
   padding: 0px;
-  width: 100%;
-  height: auto;
   object-fit: cover;
-  object-position: center center;
 }
 
 .copyrights {
   color: rgb(254, 20, 47);
   padding: 0px;
   font-size: 1rem;
-  margin: 50px 0px 30px;
+  margin: 60px 0px 30px;
   font-weight: bolder;
 }
 
@@ -512,25 +465,32 @@ nav {
   display: none;
 }
 
+footer {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0px 20px;
+}
+
+/* CONFIRMATION SUBMIT MODAL */
 .container-confirmation-submit {
   display: none;
-  background-color: rgba(35, 35, 35, 0.5);
+  background-color: rgba(35, 35, 35, .5);
   width: 100%;
   height: 200vh;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 3;
 }
 
 .submitted-form {
   width: 100%;
   height: 100%;
-  left: 0px;
-  margin: 0px auto;
+  left: 0;
+  margin: 0 auto;
   position: fixed;
   top: 0px;
 }
@@ -544,31 +504,32 @@ nav {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
-  color: rgb(255, 255, 255);
+  color: #FFFFFF;
 }
 
-.close-modal-submit::before, .close-modal-submit::after {
+.close-modal-submit:before,
+.close-modal-submit:after {
   position: absolute;
   left: 0.9375rem;
   content: " ";
   height: 2.0625rem;
   width: 0.1875rem;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 
-.close-modal-submit::before {
+.close-modal-submit:before {
   transform: rotate(45deg);
 }
 
-.close-modal-submit::after {
+.close-modal-submit:after {
   transform: rotate(-45deg);
 }
 
 .submitted-form p {
   width: 100%;
   height: 100%;
-  background-color: rgb(35, 35, 35);
-  color: rgb(255, 255, 255);
+  background-color: #232323;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -582,21 +543,28 @@ nav {
   outline: none;
   border: none;
   font-size: 22px;
-  background: rgb(254, 20, 47);
+  background: #fe142f;
   display: flex;
   margin: auto;
-  color: rgb(255, 255, 255);
+  padding: 2em;
+  color: #fff;
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
   cursor: pointer;
 }
 
-footer {
-  margin-left: 40px;
-  /* margin-top: 50px; */
+@media (min-width: 826px) and (max-width: 950px) {
+  .hero-headline {
+      font-size: 5rem;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 825px) {
+  .header-logo {
+      cursor: pointer;
+      font-size: 40px;
+  }
+
   .hero-section {
       display: block;
       box-shadow: unset;
@@ -605,7 +573,8 @@ footer {
   .hero-content {
       background: rgb(255, 255, 255);
       color: rgb(0, 0, 0);
-      padding: 20px 0px;
+      padding: 20px;
+      min-width: 100%;
   }
 
   .hero-content::after {
@@ -617,22 +586,16 @@ footer {
   }
 
   .hero-headline {
-      font-size: 6.5rem;
+      font-size: 38px;
       white-space: normal;
+      font-weight: 600;
+      margin-left: -17px;
   }
 
   .hero-text {
       width: unset;
-      font-size: 2.5rem;
-  }
-
-  .hero-section > .btn-signup {
-      display: block;
-      margin: 50px auto 0px;
-      padding: 12px 35px;
-      width: 18rem;
-      height: 4rem;
-      font-size: 2.2rem;
+      font-size: 21px;
+      margin-left: -17px;
   }
 
   .hero-img img {
@@ -640,10 +603,99 @@ footer {
       margin-top: 40px;
   }
 
+  .hero-section > .btn-signup {
+      display: block;
+      margin: 32px auto 10px;
+      padding: 12px 35px;
+  }
+
   .copyrights {
       margin-top: 50px;
       text-align: center;
-      font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {
+      position: relative;
+  }
+
+  .topnav.responsive .icon {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background: transparent;
+  }
+
+  .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+  }
+  .topnav a {
+    display: none;
+}
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+    color: red;
+    font-size: 23px;
+}
+
+.topnav a:hover.icon{
+  color: white;
+}
+
+.topnav.responsive a:hover.icon{
+  color: red;
+}
+
+  .topnav.responsive .main-navbar{
+    width: 100%;
+  }
+/* CSS pour cacher les défilements verticaux du body lorsque le modal est ouvert */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  .bground{
+    background-color: transparent;
+  }
+
+  .content{
+    max-width: none;
+    top: 70px;
+  }
+}
+
+/* @media screen and (max-width: 768px) and (min-width: 541px) {
+  .topnav.responsive .icon{
+    color: white;
+  }
+} */
+
+@media screen and (max-width: 540px) {
+  .topnav a {
+      display: none;
+  }
+
+  .topnav a.icon {
+      float: right;
+      display: block;
+      margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header-logo{
+  width: 150px;
+  font-size: 35px;
+  }
+
+  .header-logo img{
+    width: 100%;
+    height: auto;
   }
 }
 

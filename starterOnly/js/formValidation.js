@@ -84,14 +84,17 @@ function checkBirthdate() {
 // NUMBER OF TOURNAMENTS CHECK
 function checkTournamentsQuantity() {
   if (
-    quantity.value.trim().length === 0 ||
-    isNaN(quantity.value.trim()) === true ||
-    quantity.value.trim() < 0
+    quantity.value.trim().length === 0 || // Vérifie si la valeur est vide ou ne contient que des espaces
+    isNaN(quantity.value.trim()) || // Vérifie si la valeur n'est pas un nombre
+    quantity.value.trim() < 0 // Vérifie si la valeur est inférieure à zéro
   ) {
     quantity.parentElement.dataset.errorVisible = "true";
     quantity.classList.remove("validationSuccess");
     quantity.classList.add("error");
+    return false; // Ajoutez cette ligne pour arrêter la validation en cas d'erreur
   }
+
+  // Si la valeur est valide, effacez les marqueurs d'erreur et ajoutez la classe de validation
   quantity.parentElement.dataset.errorVisible = "false";
   quantity.classList.remove("error");
   quantity.classList.add("validationSuccess");
