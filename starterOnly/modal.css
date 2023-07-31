@@ -122,6 +122,10 @@ main {
   font-size: 16px;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .bground {
   display: none;
   position: fixed;
@@ -135,7 +139,7 @@ main {
 }
 
 .content {
-  margin: 5% auto;
+  margin: 1.5% auto;
   width: 100%;
   max-width: 500px;
   animation-name: modalopen;
@@ -651,29 +655,22 @@ footer {
   color: red;
 }
 
-  .topnav.responsive .main-navbar{
+.topnav.responsive .main-navbar{
     width: 100%;
-  }
-/* CSS pour cacher les défilements verticaux du body lorsque le modal est ouvert */
-  body.modal-open {
-    overflow: hidden;
-  }
+}
   
-  .bground{
+.bground{
     background-color: transparent;
-  }
-
-  .content{
-    max-width: none;
-    top: 70px;
-  }
 }
 
-/* @media screen and (max-width: 768px) and (min-width: 541px) {
-  .topnav.responsive .icon{
-    color: white;
+.content{
+    max-width: none;
+    top: 6vh;
+    margin: 5% auto;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
-} */
+}
 
 @media screen and (max-width: 540px) {
   .topnav a {
