@@ -659,6 +659,10 @@ footer {
     width: 100%;
 }
   
+body.modal-open .hero-section{
+  display: none;
+}
+
 .bground{
     background-color: transparent;
 }
