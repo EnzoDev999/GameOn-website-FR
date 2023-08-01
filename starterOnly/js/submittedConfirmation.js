@@ -14,15 +14,16 @@ function displayModalSubmit() {
 
 // CLOSE SUBMIT
 function closeSubmit() {
+  // Reset form
   modalSubmit[0].style.display = "none";
   first.style.border = "none";
   last.style.border = "none";
   email.style.border = "none";
   birthdate.style.border = "none";
   quantity.style.border = "none";
-  document.body.classList.remove("modal-open"); // retire le modal-open du body afin de pouvoir rescroll
+  document.body.classList.remove("modal-open"); // Remove "modal-open" from the body to scroll
 }
 
 // EVENT CLOSE MODAL SUBMIT
-closeModalSubmit[0].addEventListener("click", closeSubmit);
-closeBtnConfirmation.addEventListener("click", closeSubmit);
+closeModalSubmit[0].addEventListener("click", closeSubmit); // Close by the close button on top right
+closeBtnConfirmation.addEventListener("click", closeSubmit); // Close by the "Fermer" button in front of the page
