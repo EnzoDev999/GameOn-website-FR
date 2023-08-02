@@ -556,7 +556,13 @@ footer {
   cursor: pointer;
 }
 
-@media (min-width: 826px) and (max-width: 950px) {
+@media screen and (min-width: 769px) and (max-width: 1110px)  {
+  .main-navbar{
+    float: none;
+  }
+}
+
+@media screen and (min-width: 826px) and (max-width: 965px) {
   .hero-headline {
       font-size: 5rem;
   }
@@ -668,10 +674,10 @@ body.modal-open .hero-section{
 
 .content{
     max-width: none;
-    top: 6vh;
-    margin: 5% auto;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    margin: 74px 0 0 0;
+    min-height: calc(100% - 74px);
   }
 }
 
@@ -687,7 +693,7 @@ body.modal-open .hero-section{
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 345px) {
   .header-logo{
   width: 150px;
   font-size: 35px;
@@ -696,6 +702,10 @@ body.modal-open .hero-section{
   .header-logo img{
     width: 100%;
     height: auto;
+  }
+
+  .content{
+    margin: 54px 0 0 0;
   }
 }
 
